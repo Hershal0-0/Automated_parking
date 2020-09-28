@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Login Page</title>
-	<link rel="stylesheet" href="style1.css">
+	<link rel="stylesheet" href="../css/style1.css">
 </head>
 <body>
 
@@ -60,6 +60,7 @@
 			if(mysqli_num_rows($login_res)>0)
 			{
 				echo "<script>alert('Logged in Successfully')</script>";
+				header("Location: http://localhost/Automated_parking/src/parking_areas.php");
 			}
 			else{
 				echo "<script>alert('Login Unsuccessful TRY AGAIN ')</script>";

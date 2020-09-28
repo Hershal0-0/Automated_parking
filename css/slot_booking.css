@@ -3,6 +3,8 @@
 	height: 100vh;
 }
 
+
+
 .section .section-center {
 	position: absolute;
 	top: 50%;
@@ -10,6 +12,8 @@
 	right: 0;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+	transition: opacity 1s ease-in;
+
 }
 
 #booking {
@@ -133,3 +137,5 @@
 	display: block;
 	letter-spacing: 0.4px;
 }
+
+
