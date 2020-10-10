@@ -1,0 +1,22 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("../img/hello.jpg");
+
+}
+
+.wrapper{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 1em;
+}
+
+.parking_spot{
+	background-color: cyan;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 3px solid white;
+	border-radius: 40px;
+}

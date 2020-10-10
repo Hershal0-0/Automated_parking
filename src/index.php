@@ -49,8 +49,13 @@
 		z.style.left="0px"
 	}
 </script>
-	<?php 
+	<?php
+		session_start();
 		include('connection.php');
+		if($_SESSION['auth'])
+		{
+			header("Location:http://localhost/Automated_parking/src/parking_areas.php");
+		}
 		if(isset($_POST['login_submit']))
 		{
 			$username=$_POST['log_username'];
@@ -60,9 +65,13 @@
 			if(mysqli_num_rows($login_res)>0)
 			{
 				echo "<script>alert('Logged in Successfully')</script>";
+				$_SESSION['username']=$username;
+				$_SESSION['auth']=TRUE;
 				header("Location: http://localhost/Automated_parking/src/parking_areas.php");
 			}
 			else{
+				$_SESSION['username']="";
+				$_SESSION['auth']=FALSE;
 				echo "<script>alert('Login Unsuccessful TRY AGAIN ')</script>";
 
 			}
