@@ -40,7 +40,8 @@
 	header("Location:http://localhost/Automated_parking/src/index.php");
 	}
 	if(isset($_POST['spot_booking'])){
-		$date=$_POST['date'];
+		$booking_date=date("Y-m-d");
+		$date=$_POST["date"];
 		$starting_time=$_POST['starting_time'];
 		$time_duration=$_POST['time_duration'];
 		$area_id=$_POST['area_id'];
@@ -51,9 +52,9 @@
 		$b=$ending_datetime->format('Y-m-d H:i:s');
 		$now=new DateTime();
 		$now=$now-> format('Y-m-d H:i:s');
-		$booking_id=1;
+		$booking_id=uniqid();
 
-		$insert_query="insert into booking_details(booking_id,area_id,spot_id,username,booking_date,from_dateime,to_datetime) values('$booking_id','$area_id','$spot_id','$username','$a','$a','$b') ";
+		$insert_query="insert into booking_details(booking_id,area_id,spot_id,username,booking_date,from_datetime,to_datetime) values('$booking_id','$area_id','$spot_id','$username','$booking_date','$a','$b') ";
 		if(mysqli_query($conn,$insert_query))
 				{
 					echo "<script>alert('Booking Details Registered Successfully')</script>";
@@ -64,6 +65,8 @@
 		
 
 		echo"<h1 style='color:white'> 
+			Booking ID: $booking_id <br>
+			Booking Date: $booking_date <br>
 			Slot Booked for spot_id: $spot_id<br>
 			area_id:$area_id<br>
 			starting_time: $a<br>
