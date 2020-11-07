@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 10, 2020 at 08:34 PM
+-- Generation Time: Nov 07, 2020 at 11:54 AM
 -- Server version: 5.7.28
 -- PHP Version: 7.4.7
 
@@ -38,6 +38,20 @@ CREATE TABLE `booking_details` (
   `to_datetime` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `booking_details`
+--
+
+INSERT INTO `booking_details` (`booking_id`, `area_id`, `spot_id`, `username`, `booking_date`, `from_datetime`, `to_datetime`) VALUES
+('1', '1', '1', 'hershal', '2020-11-06 11:50:00', '2020-11-06 11:50:00', '2020-11-06 12:50:00'),
+('1', '1', '2', 'hershal', '2020-11-06 11:50:00', '2020-11-06 11:50:00', '2020-11-06 12:50:00'),
+('5fa4eea32c119', '3', '14', 'hershal', '2020-11-06', '2020-11-06 11:50:00', '2020-11-06 12:50:00'),
+('5fa4eee449ab6', '4', '14', 'hershal', '2020-11-06', '2020-11-26 11:50:00', '2020-11-26 12:50:00'),
+('5fa50eff4aaed', '4', '14', 'hershal', '2020-11-06', '2020-11-26 11:50:00', '2020-11-26 12:50:00'),
+('5fa510fe759d2', '1', '1', 'hershal', '2020-11-06', '2020-11-06 00:50:00', '2020-11-06 01:50:00'),
+('5fa51a3e984c7', '1', '3', 'hershal', '2020-11-06', '2020-11-06 11:50:00', '2020-11-06 13:50:00'),
+('5fa51a4adc289', '1', '5', 'hershal', '2020-11-06', '2020-11-06 11:50:00', '2020-11-06 13:50:00');
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +60,8 @@ CREATE TABLE `booking_details` (
 
 CREATE TABLE `login_info` (
   `username` varchar(12) NOT NULL,
+  `email_id` varchar(50) NOT NULL,
+  `mobile` varchar(20) DEFAULT NULL,
   `password` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -53,10 +69,12 @@ CREATE TABLE `login_info` (
 -- Dumping data for table `login_info`
 --
 
-INSERT INTO `login_info` (`username`, `password`) VALUES
-('hershal', 'aaaa'),
-('number2', '1234'),
-('tanisha', '1234');
+INSERT INTO `login_info` (`username`, `email_id`, `mobile`, `password`) VALUES
+('hello', 'hello@gmail.com', '7977391698', 'aaaaa'),
+('hershal', '', '0', 'aaaa'),
+('number2', '', '0', '1234'),
+('tanisha', '', '0', '1234'),
+('user1', '', '0', 'qwerty');
 
 -- --------------------------------------------------------
 

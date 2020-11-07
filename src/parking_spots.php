@@ -51,9 +51,9 @@
 	function check_date_range($booking_from,$booking_to,$booked_from,$booked_to)
 	{
 		if(($booking_from>=$booked_from && $booking_from<=$booked_to) || ($booking_to>=$booked_from && $booking_to<=$booked_to) )
-		return 'TRUE';
+		return TRUE;
 		else
-		return 'FALSE';
+		return FALSE;
 	}
 
 	$sql_query="Select * from parking_areas where area_id='$area_id'";
@@ -67,7 +67,7 @@
 		$to_datetime=$from_datetime->add(new DateInterval("PT{$time_duration}H"));
 		$a="$date $starting_time:00";
 		$b=$to_datetime->format('Y-m-d H:i:s');
-		$c="FALSE";
+		$c=FALSE;
 		$booking_details_query="select * from booking_details where area_id='$area_id' and spot_id = '$num' ";
 		$booking_res=mysqli_query($conn,$booking_details_query);
 		if(mysqli_num_rows($booking_res)>0)
@@ -75,23 +75,25 @@
 			while($row=$booking_res->fetch_assoc())
 			{
 				$c=check_date_range($a,$b,$row['from_datetime'],$row['to_datetime']);
-				if($c=='TRUE')
+				if($c==TRUE)
 				{break;}
 			}
 		}
 
 
 
-		if($c=="TRUE")
-		echo "<div class='parking_spot' style='background-color:red;' > ";
+		if($c==TRUE)
+		echo "<div class='parking_spot' style='background-color:red;' > 
+		<form action='booking.php' method='POST' >
+		<input type='submit' name='spot_booking' value='$num' disabled>";
 		else
-		echo "<div class='parking_spot'>";
+		echo "<div class='parking_spot'>
+		<form action='booking.php' method='POST' >
+		<input type='submit' name='spot_booking' value='$num'>";
 
 		
 		
-		echo "<form action='booking.php' method='POST' >
-		<input type='submit' name='spot_booking' value='$num'>
-		$a<br>$b<br>
+		echo "$a<br>$b<br>
 
 		<input type='hidden' name='date' value='$date' >
 		<input type='hidden' name='starting_time' value='$starting_time' >
