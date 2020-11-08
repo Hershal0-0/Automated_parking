@@ -88,7 +88,7 @@
 		<input type='submit' name='spot_booking' value='$num' disabled>";
 		else
 		echo "<div class='parking_spot'>
-		<form action='booking.php' method='POST' >
+		<form action='pay_start.php' method='POST' >
 		<input type='submit' name='spot_booking' value='$num'>";
 
 		
@@ -97,6 +97,7 @@
 
 		<input type='hidden' name='date' value='$date' >
 		<input type='hidden' name='starting_time' value='$starting_time' >
+		<input type='hidden' name='ending_time' value='$b' >
 		<input type='hidden' name='time_duration' value='$time_duration' >
 		<input type='hidden' name='area_id' value='$area_id' >
 		<input type='hidden' name='spot_id' value='$num' >

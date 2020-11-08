@@ -103,7 +103,9 @@
 			if(mysqli_num_rows($login_res)>0)
 			{
 				echo "<script>alert('Logged in Successfully')</script>";
-				$_SESSION['username']=$username;
+        $_SESSION['username']=$username;
+        $row=$login_res -> fetch_assoc();
+        $_SESSION['email_id']=row['email_id'];
 				$_SESSION['auth']=TRUE;
 				header("Location: http://localhost/Automated_parking/src/parking_areas.php");
 			}
