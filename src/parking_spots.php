@@ -84,7 +84,7 @@
 
 		if($c==TRUE)
 		echo "<div class='parking_spot' style='background-color:red;' > 
-		<form action='booking.php' method='POST' >
+		<form action='pay_start.php' method='POST' >
 		<input type='submit' name='spot_booking' value='$num' disabled>";
 		else
 		echo "<div class='parking_spot'>
@@ -96,7 +96,7 @@
 		echo "$a<br>$b<br>
 
 		<input type='hidden' name='date' value='$date' >
-		<input type='hidden' name='starting_time' value='$starting_time' >
+		<input type='hidden' name='starting_time' value='$a' >
 		<input type='hidden' name='ending_time' value='$b' >
 		<input type='hidden' name='time_duration' value='$time_duration' >
 		<input type='hidden' name='area_id' value='$area_id' >

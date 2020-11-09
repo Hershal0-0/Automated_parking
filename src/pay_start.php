@@ -34,13 +34,21 @@
       type="text" 
       class="form-control mb-3 StripeElement StripeElement--empty"
       placeholder="Name On Card" name="name">
-      <?php echo "<input type='hidden' name='charge' value='$cost' >"; ?>
       <input 
       type="email" 
       class="form-control mb-3 StripeElement StripeElement--empty"
       placeholder="Email" name="email">
 
+      <?php
+      echo "<input type='hidden' name='spot_id' value='$spot_id' >"; 
+      echo "<input type='hidden' name='area_id' value='$area_id' >"; 
+      echo "<input type='hidden' name='time_duration' value='$time_duration' >"; 
+      echo "<input type='hidden' name='from_datetime' value='$from_datetime' >"; 
+      echo "<input type='hidden' name='to_datetime' value='$to_datetime' >";  
+      echo "<input type='hidden' name='charge' value='$cost' >"; 
       
+      ?>
+
 
       <div id="card-element" class="form-control">
         <!-- A Stripe Element will be inserted here. -->

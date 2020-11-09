@@ -10,7 +10,13 @@ $POST=filter_var_array($_POST,FILTER_SANITIZE_STRING);
 $first_name= $POST['name'];
 $email= $POST['email'];
 $token= $POST['stripeToken'];
-$charge=$POST['charge'];
+
+$spot_id=$POST['spot_id'];
+$area_id=$POST['area_id'];
+$time_duration=$POST['time_duration'];
+$from_datetime=$POST['from_datetime'];
+$to_datetime=$POST['to_datetime'];
+$amount=$POST['charge'];
 // create customer in Stripe
 
 $customer=\Stripe\Customer::create(array(
@@ -21,14 +27,26 @@ $customer=\Stripe\Customer::create(array(
 //Charge Customer
 
 $charge =\Stripe\Charge::create(array(
-    "amount" => number_format($charge)*100,
+    "amount" => number_format($amount)*100,
     "currency" => "inr",
     "description" => "Parking Spot",
     "customer" => $customer->id
 ));
 
+
+
 //Redirect To Success Page
-header("Location:success.php?tid=".$charge->id.'&product='.$charge->description);
+
+header("Location:success.php?tid="
+        .$charge->id
+        .'&product='.$charge->description
+        .'&last4='.$charge->last4
+        .'&spot_id='.$spot_id
+        .'&area_id='.$area_id
+        .'&time_duration='.$time_duration
+        .'&from_datetime='.$from_datetime
+        .'&to_datetime='.$to_datetime
+        .'&amount='.$amount);
 
 
 ?>
