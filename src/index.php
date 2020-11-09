@@ -31,7 +31,7 @@
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" name="reg_username" required />
+              <input type="text" placeholder="Enter Username" name="reg_username" required />
             </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
