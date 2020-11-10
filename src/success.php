@@ -22,6 +22,7 @@
 <?php
    session_start();
    include ('connection.php');
+   require_once('../PHPMailer/PHPMailerAutoload.php');
    if(!$_SESSION['auth'] && $_SESSION['username']=='' )
     {
         echo "<script>
@@ -134,6 +135,41 @@ $transaction_insert_query="insert into transaction(transaction_id,customer_id,bo
         {
 			echo "<script>alert('Transaction Details NOT Registered ')</script>";
         }
+
+    $email_query="select email_id from login_info where username='$username' ";
+    $email_res=mysqli_query($conn,$email_query);
+    $email=mysqli_fetch_assoc($email_res)['email_id'];
+
+        //Send Booking/Transaction Details Through Email
+        $msg1="<html><head></head><body>Thank you for purchasing a parking spot with our website<br>";
+        $msg2="Your Booking And Transactions Details are as follows:<br>
+        BookingId:$booking_id<br>
+        TransactionId:$tid<br>
+        Amount:$amount<br>
+        Booking Date:$booking_date<br>
+        Parking Area:$area_id<br>
+        Spot Id:$spot_id<br>
+        From DateTime:$from_datetime<br>
+        To DateTime:$to_datetime<br>
+        Time Duration: $time_duration hrs.<br>";
+        $msg3="Thanks & regards,<br> Parking Booking.<br>++++<br></body></html>";
+        $final_msg=$msg1.$msg2.$msg3;
+
+    $mail=new PHPMailer();
+    $mail->isSMTP();
+    $mail->SMTPAuth=true;
+    $mail->SMTPSecure='ssl';
+    $mail->Host='smtp.gmail.com';
+    $mail->Port='465';
+    $mail->isHTML();
+    $mail->Username='pewwins1@gmail.com';
+    $mail->Password='dypatil@123';
+    $mail->SetFrom('mo-reply@parking.com');
+    $mail->Subject='Booking & Transaction Details';
+    $mail->Body=$final_msg;
+    $mail->AddAddress($email);
+
+    $mail->Send();
 ?>
 
     <div class="container mt-4">
@@ -146,6 +182,7 @@ $transaction_insert_query="insert into transaction(transaction_id,customer_id,bo
       <p>Check Your email for more info</p>
       <p><a href="pay_start.php" class="btn btn-primary mt-2"> Go Back </a></p>
     </div>
+
 
   </body>
 </html>
