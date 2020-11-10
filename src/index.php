@@ -5,6 +5,7 @@
 		include('connection.php');
 		if(isset($_SESSION["auth"]))
 		{
+      if($_SESSION['auth'])
 			header("Location:http://localhost/Automated_parking/src/parking_areas.php");
 		}
 		if(isset($_POST['login_submit']))
