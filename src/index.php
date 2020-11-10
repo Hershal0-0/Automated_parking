@@ -3,7 +3,7 @@
 <?php
 		session_start();
 		include('connection.php');
-		if($_SESSION["auth"])
+		if(isset($_SESSION["auth"]))
 		{
 			header("Location:http://localhost/Automated_parking/src/parking_areas.php");
 		}
