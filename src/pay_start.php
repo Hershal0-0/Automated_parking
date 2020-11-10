@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="../css/charge.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
     <title>Pay Page</title>
 </head>
 <body>
@@ -25,6 +28,16 @@
     header("Location:index.php");
   }
 ?>
+
+
+
+<div class="container">
+  <img src="https://marketplace.magento.com/media/catalog/product/s/t/stripe-payment_7.png" width="100" height="250"  style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;">
+</div>
+
 <div class="container">
   <h2 class="my-4 text-center">Car Parking Payment</h2>
   <h5 class="my-4 text-center">You've agreed to pay Rs. <?php echo $cost ?>  </h5>
