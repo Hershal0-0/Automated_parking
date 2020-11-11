@@ -28,8 +28,8 @@
 	}
 	else{
 		$username=$_SESSION['username'];
-
-		/*echo "<h1 style='color:white;'>Welcome $username</h1>";*/
+		
+	}
    ?>
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #433ab5;">
@@ -66,22 +66,7 @@
   </div>
 </nav>
 
-<!-- 	<?php 
-	/*session_start();
-	include ('connection.php');
-	if(!$_SESSION['auth'] && $_SESSION['username']=='' )*/
-	{
-		/*echo "<script>
-		alert('Authentication of User Failed.Try logging again')</script>";
-		header("Location:http://localhost/Automated_parking/src/index.php")*/;
-	}
-	/*else{
-		$username=$_SESSION['username'];
 
-		echo "<h1 style='color:white;'>Welcome $username</h1>";*/
-
-	}
-	?> -->
 
 <?php
 	if(isset($_POST['logout_btn']))

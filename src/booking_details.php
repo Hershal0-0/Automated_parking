@@ -31,8 +31,8 @@
 	else{
 		$username=$_SESSION['username'];
 
-		/*echo "<h1 style='color:white;'>Welcome $username</h1>";*/
-   ?>
+	}
+  ?>
 	
 
 

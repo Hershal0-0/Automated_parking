@@ -45,7 +45,8 @@
 	else{
 		$username=$_SESSION['username'];
 
-		/*echo "<h1 style='color:white;'>Welcome $username</h1>";*/
+	}
+
    ?>
 	
 
@@ -85,8 +86,8 @@
    </div>
   </nav>
 
-  <?php 
-}
+<?php 
+
 if(isset($_POST['logout_btn']))
 {
 	echo "<script>alert('Logout Successfull')</script>";
@@ -94,6 +95,7 @@ if(isset($_POST['logout_btn']))
 	$_SESSION['username']="";
 	header("Location:http://localhost/Automated_parking/src/index.php");
 }
+
 ?>
 	
 	<div style="display: flex; flex-direction: row;justify-content: center; margin-top: 100px ">	

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 09, 2020 at 06:54 AM
+-- Generation Time: Nov 11, 2020 at 06:45 AM
 -- Server version: 5.7.28
 -- PHP Version: 7.4.7
 
@@ -66,7 +66,49 @@ INSERT INTO `booking_details` (`booking_id`, `area_id`, `spot_id`, `username`, `
 ('5fa8e039cbd40', '1', '5', 'hershal', '2020-11-09', '2020-11-09 11:52:00', '2020-11-09 12:52:00'),
 ('5fa8e6452b4b7', '1', '5', 'hershal', '2020-11-09', '2020-11-09 11:52:00', '2020-11-09 12:52:00'),
 ('5fa8e6c0238c8', '1', '5', 'hershal', '2020-11-09', '2020-11-09 11:52:00', '2020-11-09 12:52:00'),
-('5fa8e7653b66f', '1', '3', 'hershal', '2020-11-09', '2020-11-09 12:22:00', '2020-11-09 13:22:00');
+('5fa8e7653b66f', '1', '3', 'hershal', '2020-11-09', '2020-11-09 12:22:00', '2020-11-09 13:22:00'),
+('5fa8f284d2580', '1', '3', 'hershal', '2020-11-09', '2020-11-09 12:22:00', '2020-11-09 13:22:00'),
+('5fa8f48210d70', '1', '3', 'hershal', '2020-11-09', '2020-11-09 12:22:00', '2020-11-09 13:22:00'),
+('5fa8f4870b26e', '1', '3', 'hershal', '2020-11-09', '2020-11-09 12:22:00', '2020-11-09 13:22:00'),
+('', '', '', '', '', '', ''),
+('5faa7a3d0cf7b', '1', '3', 'hershal', '2020-11-10', '2020-11-09 11:01:00', '2020-11-09 17:01:00'),
+('5faaafd172ad0', '1', '3', 'hershal', '2020-11-10', '2020-11-09 11:01:00', '2020-11-09 17:01:00'),
+('5faab09db3ca1', '1', '3', 'hershal', '2020-11-10', '2020-11-09 11:01:00', '2020-11-09 17:01:00'),
+('5faab10f81634', '1', '3', 'hershal', '2020-11-10', '2020-11-09 11:01:00', '2020-11-09 17:01:00'),
+('5faab53cd4c30', '1', '3', 'hershal', '2020-11-10', '2020-11-09 11:01:00', '2020-11-09 17:01:00'),
+('5faab553429c7', '1', '3', 'hershal', '2020-11-10', '2020-11-09 11:01:00', '2020-11-09 17:01:00'),
+('5faab55a930d2', '1', '3', 'hershal', '2020-11-10', '2020-11-09 11:01:00', '2020-11-09 17:01:00'),
+('5faab55e6b3ae', '1', '3', 'hershal', '2020-11-10', '2020-11-09 11:01:00', '2020-11-09 17:01:00'),
+('5faab57f05b09', '1', '5', 'hershal', '2020-11-10', '2020-11-09 11:14:00', '2020-11-09 18:14:00'),
+('5faab59d28b47', '1', '5', 'hershal', '2020-11-10', '2020-11-09 11:14:00', '2020-11-09 18:14:00'),
+('5faab5a172c44', '1', '5', 'hershal', '2020-11-10', '2020-11-09 11:14:00', '2020-11-09 18:14:00'),
+('5faab5b877557', '1', '5', 'hershal', '2020-11-10', '2020-11-09 11:14:00', '2020-11-09 18:14:00'),
+('5faab64224e56', '1', '5', 'hershal', '2020-11-10', '2020-11-09 11:14:00', '2020-11-09 18:14:00'),
+('5faab7744183c', '1', '5', 'hershal', '2020-11-10', '2020-11-09 11:14:00', '2020-11-09 18:14:00'),
+('5faab87f7452b', '1', '5', 'hershal', '2020-11-10', '2020-11-09 11:14:00', '2020-11-09 18:14:00'),
+('5faad56981720', '4', '2', 'hershal', '2020-11-10', '2020-11-09 11:30:00', '2020-11-09 12:30:00'),
+('5faad5cfcda24', '4', '2', 'hershal', '2020-11-10', '2020-11-09 11:30:00', '2020-11-09 12:30:00'),
+('5faad5ef67003', '4', '2', 'hershal', '2020-11-10', '2020-11-09 11:30:00', '2020-11-09 12:30:00'),
+('5faad6959973b', '4', '2', 'hershal', '2020-11-10', '2020-11-09 11:30:00', '2020-11-09 12:30:00'),
+('5faad738e4a4c', '4', '2', 'hershal', '2020-11-10', '2020-11-09 11:30:00', '2020-11-09 12:30:00'),
+('5faada9528a9d', '4', '2', 'hershal', '2020-11-10', '2020-11-09 11:30:00', '2020-11-09 12:30:00'),
+('5faaebe740d20', '4', '2', 'hershal', '2020-11-10', '2020-11-09 11:30:00', '2020-11-09 12:30:00'),
+('5faaeca0d095a', '4', '19', 'hershal', '2020-11-10', '2020-11-09 11:08:00', '2020-11-09 16:08:00'),
+('5faaed7d77aac', '1', '2', 'hershal', '2020-11-10', '2020-11-09 11:13:00', '2020-11-09 15:13:00'),
+('5faaf299443bb', '1', '2', 'hershal', '2020-11-10', '2020-11-09 11:13:00', '2020-11-09 15:13:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `feedback_id` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `message` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -87,7 +129,7 @@ CREATE TABLE `login_info` (
 
 INSERT INTO `login_info` (`username`, `email_id`, `mobile`, `password`) VALUES
 ('hello', 'hello@gmail.com', '7977391698', 'aaaaa'),
-('hershal', '', '0', 'aaaa'),
+('hershal', 'hershalrao@gmail.com', '7977391698', 'aaaa'),
 ('number2', '', '0', '1234'),
 ('tanisha', '', '0', '1234'),
 ('user1', '', '0', 'qwerty');
@@ -147,12 +189,31 @@ CREATE TABLE `transaction` (
 --
 
 INSERT INTO `transaction` (`transaction_id`, `customer_id`, `booking_id`, `product`, `amount`, `currency`, `status`, `last_4digits`, `created_at`) VALUES
+('', '', '', '', '', 'INR', 'Success', '', '2020-11-09 14:04:38'),
 ('ch_1HlUD5IT4kRr32BIqL1cvNID', 'hershal', '5fa8e6c0238c8', 'Parking Spot', '10', 'INR', 'Success', '', '2020-11-09 12:20:40'),
-('ch_1HlUFkIT4kRr32BICcQXfoGN', 'hershal', '5fa8e7653b66f', 'Parking Spot', '10', 'INR', 'Success', '', '2020-11-09 12:23:25');
+('ch_1HlUFkIT4kRr32BICcQXfoGN', 'hershal', '5fa8e7653b66f', 'Parking Spot', '10', 'INR', 'Success', '', '2020-11-09 12:23:25'),
+('ch_1HlUzgIT4kRr32BIJNHE7NTa', 'hershal', '5fa8f284d2580', 'Parking Spot', '10', 'INR', 'Success', '', '2020-11-09 13:10:52'),
+('ch_1Hlv56IT4kRr32BIslfLTpLH', 'hershal', '5faa7a3d0cf7b', 'Parking Spot', '60', 'INR', 'Success', '', '2020-11-10 17:02:13'),
+('ch_1HlyeKIT4kRr32BILFus97GN', 'hershal', '5faaafd172ad0', 'Parking Spot', '60', 'INR', 'Success', '', '2020-11-10 20:50:49'),
+('ch_1Hlz1mIT4kRr32BINnuZD0oC', 'hershal', '5faab57f05b09', 'Parking Spot', '70', 'INR', 'Success', '', '2020-11-10 21:15:03'),
+('ch_1Hlz2hIT4kRr32BIevbIRiES', 'hershal', '5faab5b877557', 'Parking Spot', '70', 'INR', 'Success', '', '2020-11-10 21:16:00'),
+('ch_1Hm19YIT4kRr32BIbRd03nDn', 'hershal', '5faad56981720', 'Parking Spot', '10', 'INR', 'Success', '', '2020-11-10 23:31:13'),
+('ch_1Hm1BiIT4kRr32BIOsR4UV5o', 'hershal', '5faad5ef67003', 'Parking Spot', '10', 'INR', 'Success', '', '2020-11-10 23:33:27'),
+('ch_1Hm1EOIT4kRr32BIfzNvOVLz', 'hershal', '5faad6959973b', 'Parking Spot', '10', 'INR', 'Success', '', '2020-11-10 23:36:13'),
+('ch_1Hm1UuIT4kRr32BIlr7pUvXv', 'hershal', '5faada9528a9d', 'Parking Spot', '10', 'INR', 'Success', '', '2020-11-10 23:53:17'),
+('ch_1Hm2hQIT4kRr32BIqpr2WYau', 'hershal', '5faaeca0d095a', 'Parking Spot', '50', 'INR', 'Success', '', '2020-11-11 01:10:16'),
+('ch_1Hm2kyIT4kRr32BIbqchyGD6', 'hershal', '5faaed7d77aac', 'Parking Spot', '40', 'INR', 'Success', '', '2020-11-11 01:13:57'),
+('ch_1Hm364IT4kRr32BIGCCXkDOn', 'hershal', '5faaf299443bb', 'Parking Spot', '40', 'INR', 'Success', '', '2020-11-11 01:35:45');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`feedback_id`);
 
 --
 -- Indexes for table `login_info`
