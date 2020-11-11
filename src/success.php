@@ -104,8 +104,8 @@ if(!empty($_GET['tid']) && !empty($_GET['product']))
     header("Location: pay_start.php"); 
 }
 
-$insert_query="insert into booking_details(booking_id,area_id,spot_id,username,booking_date,from_datetime,to_datetime) 
-    values('$booking_id','$area_id','$spot_id','$username','$booking_date','$from_datetime','$to_datetime') ";
+$insert_query="insert into booking_details(booking_id,area_id,spot_id,username,booking_date,from_datetime,to_datetime,sms_alert) 
+    values('$booking_id','$area_id','$spot_id','$username','$booking_date','$from_datetime','$to_datetime','False') ";
 		if(mysqli_query($conn,$insert_query))
 				{
 					echo "<script>alert('Booking Details Registered Successfully')</script>";

@@ -39,7 +39,7 @@
    ?>
 	
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #433ab5;">
-  <a class="navbar-brand" href="#"><i class="fa fa-car" aria-hidden="true"></i></a>
+  <a class="navbar-brand" href="index.php"><i class="fa fa-car" aria-hidden="true"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -105,15 +105,13 @@ $mobile=$email_mobile_res['mobile'];
   }
   // PHONE NUMBER VERIFICATION!!!!!
   require ("../vendor/autoload.php");
+  include('twilio_var.php');
   use Twilio\Rest\Client;
   if(isset($_POST['send_m_verif_code']))
   {
 
     $mobile_code=generate_random_letters(6);
-    $mobile="+91".$mobile;
-    $sid='ACfdf392b1f029d7fef193711423b736d2';
-    $token='61b1d1aa82114755d395ea2c20d9d7ee';
-    $twilio_number='+12185273596';
+    $mobile="+91".$mobile;    
     $final_msg="
     Dear Sir/Madam,\n
     Your Phone Number Verification Code is:  $mobile_code \n
@@ -124,7 +122,7 @@ $mobile=$email_mobile_res['mobile'];
     $message=$client->messages->create(
       $mobile,
       array(
-        'from'=> '+12185273596',
+        'from'=> $twilio_number,
         'body'=> $final_msg,
       )
     );
