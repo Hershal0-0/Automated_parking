@@ -21,7 +21,7 @@ var style={
 //Style Button With Boostrap
 document
     .querySelector("#payment-form button")
-    .classList="btn btn-primary btn-block mt-4"
+    .classList="btn btn-block mt-4"
 
 var card =elements.create('card',{style:style})
 

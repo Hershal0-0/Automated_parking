@@ -71,7 +71,7 @@
           ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#"><i class="fa fa-user" aria-hidden="true"></i> My profile</a>
+          <a class="dropdown-item" href="my_profile.php"><i class="fa fa-user" aria-hidden="true"></i> My profile</a>
 
           <a class="dropdown-item" href="http://localhost/Automated_parking/src/index.php">
           		<div>

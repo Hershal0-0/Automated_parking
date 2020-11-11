@@ -32,10 +32,13 @@
 
 
 <div class="container">
-  <img src="https://marketplace.magento.com/media/catalog/product/s/t/stripe-payment_7.png" width="100" height="250"  style="display: block;
-  margin-left: auto;
+  <img src="https://marketplace.magento.com/media/catalog/product/s/t/stripe-payment_7.png" width="100" height="250"  
+  style="display: block;
   margin-right: auto;
-  width: 50%;">
+  width: 40%;
+  /* border: 2px solid #7154ff;
+  border-radius:5%; */
+  "> 
 </div>
 
 <div class="container">
@@ -46,11 +49,11 @@
       <input 
       type="text" 
       class="form-control mb-3 StripeElement StripeElement--empty"
-      placeholder="Name On Card" name="name">
+      placeholder="Name On Card" name="name" required>
       <input 
       type="email" 
       class="form-control mb-3 StripeElement StripeElement--empty"
-      placeholder="Email" name="email">
+      placeholder="Email" name="email" required >
 
       <?php
       echo "<input type='hidden' name='spot_id' value='$spot_id' >"; 
@@ -71,7 +74,7 @@
       <div id="card-errors" role="alert"></div>
     </div>
 
-    <button>Submit Payment</button>
+    <button style="background-color: #7154ff; border-color:#7154ff;">Submit Payment</button>
   </form>
 </div>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->

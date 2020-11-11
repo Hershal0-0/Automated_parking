@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInitb351f1b5cbf73751d2f45322c43a1dd6
 {
     public static $prefixLengthsPsr4 = array (
+        'T' => 
+        array (
+            'Twilio\\' => 7,
+        ),
         'S' => 
         array (
             'Stripe\\' => 7,
@@ -14,6 +18,10 @@ class ComposerStaticInitb351f1b5cbf73751d2f45322c43a1dd6
     );
 
     public static $prefixDirsPsr4 = array (
+        'Twilio\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twilio/sdk/src/Twilio',
+        ),
         'Stripe\\' => 
         array (
             0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
