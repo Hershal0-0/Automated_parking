@@ -43,17 +43,17 @@
 ?>  
 
  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #433ab5;">
-  <a class="navbar-brand"><i class="fa fa-car" aria-hidden="true"></i></a>
+  <a class="navbar-brand" href="parking_areas.php"><i class="fa fa-car" aria-hidden="true"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav w-100">
       <li class="nav-item" >
-        <a class="nav-link" href="#" style="color: white;"><i class="fa fa-address-card" aria-hidden="true"></i> Booking Details</a>
+        <a class="nav-link" href="booking_details.php" style="color: white;"><i class="fa fa-address-card" aria-hidden="true"></i> Booking Details</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" style="color: white;"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Transaction Details</a>
+        <a class="nav-link" href="transaction_details.php" style="color: white;"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Transaction Details</a>
       </li>
       <li class="nav-item dropdown ml-auto">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;"><i class="fa fa-user-circle" aria-hidden="true"></i>
@@ -62,7 +62,7 @@
           ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#"><i class="fa fa-user" aria-hidden="true"></i> My profile</a>
+          <a class="dropdown-item" href="my_profile.php"><i class="fa fa-user" aria-hidden="true"></i> My profile</a>
 
           <a class="dropdown-item" href="http://localhost/Automated_parking/src/index.php">
                 <div>
