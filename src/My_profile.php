@@ -10,11 +10,13 @@
 <link rel="stylesheet" href="../css/slot_booking.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/my_profile.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/2f8871758b.js" crossorigin="anonymous"></script>
+<script src="../src/my_profile.js"></script>
 
 
 <body>
@@ -36,6 +38,13 @@
 
     /*echo "<h1 style='color:white;'>Welcome $username</h1>";*/
   }
+  if(isset($_POST['logout_btn']))
+{
+echo "<script>alert('Logout Successfull')</script>";
+$_SESSION['auth']=FALSE;
+$_SESSION['username']="";
+header("Location:http://localhost/Automated_parking/src/index.php");
+}
    ?>
 	
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #433ab5;">
@@ -81,6 +90,52 @@ $mobile=$email_mobile_res['mobile'];
 
 ?>
 <br>
+
+<div>
+<div class="curved">
+  <label for="username" style="color:white">Username</label>
+  <input type="text" name="username" disabled value="<?php echo $username; ?>">
+</div>
+<div class="curved">
+  <label for="email" style="color:white">Email Id</label>
+  <input type="email" name="email" disabled value="<?php echo $email; ?>">
+  <?php 
+  $query="select verification from login_info where username='$username'";
+  $verify=mysqli_fetch_assoc(mysqli_query($conn,$query));
+  $email_verify=FALSE;$mobile_verify=FALSE;
+  if($verify['verification']=="Both" || $verify['verification']=="Email")
+  {echo "<i class='fas fa-user-check fa-large' style='color:#10c72b;'></i>";
+  $email_verify=TRUE;}
+  else
+  echo "<i class='far fa-times-circle ' style='color:#f20a15;'></i>";
+  echo "<br><button class='btn btn-info' id='email_change'>Change</button>";
+
+
+  ?>
+</div>
+<div class="curved">
+  <label for="mobile" style="color:white">Phone Number</label>
+  <input type="text" name="mobile" disabled value="<?php echo $mobile; ?>">
+  <?php 
+  if($verify['verification']=="Both" || $verify['verification']=="Mobile")
+  {echo "<i class='fas fa-user-check fa-large' style='color:#10c72b;'></i>";
+  $mobile_verify=TRUE;}
+  else
+  echo "<i class='far fa-times-circle ' style='color:#f20a15;'></i>";
+  echo "<br><button class='btn btn-info' id='mobile_change'>Change</button>";
+  ?>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
 <form action="#" method="POST">
   <input type="text" name="email" id="email" value='<?php echo $email; ?>' disabled class="m-2"><br>
   <input type="submit" name="send_e_verif_code" id="send_e_verif_code" value="Send Email Verification Code" class="btn btn-primary m-2"><br>

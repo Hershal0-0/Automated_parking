@@ -3,12 +3,12 @@
 	<head>
 	<title></title>
 </head>
-<link rel="stylesheet" href="../css/parking_spots_style.css">
-
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/parking_spots_style.css">
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -52,7 +52,7 @@
           ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#"><i class="fa fa-user" aria-hidden="true"></i> My profile</a>
+          <a class="dropdown-item" href="my_profile.php"><i class="fa fa-user" aria-hidden="true"></i> My profile</a>
           <a class="dropdown-item" href="http://localhost/Automated_parking/src/index.php">
           		<div>
           		    <form class="form-inline btn btn-outline-success my-2 my-sm-0" action="#" method="POST">          
@@ -82,10 +82,10 @@
 		$starting_time=$_POST['starting_time'];
 		$time_duration=$_POST['time_duration'];
 		$area_id=$_POST['area_id'];
-		echo "<h4 style='color:white;'>$date</h4>";
-		echo "<h4 style='color:white;'>$starting_time</h4>";
-		echo "<h4 style='color:white;'>$time_duration</h4>";
-		echo "<h4 style='color:white;'>$area_id</h4>";
+		echo "<div class='curved'><h4 style='color:white;'>Booking Date: $date</h4>";
+		echo "<h4 style='color:white;'>Starting Time: $starting_time</h4>";
+		echo "<h4 style='color:white;'>Time Duration: $time_duration hrs</h4>";
+		echo "<h4 style='color:white;'>Area Id: $area_id</h4></div><br><br>";
 		
 	}
 	else{
@@ -137,8 +137,7 @@
 
 		
 		
-		echo "$a<br>$b<br>
-
+		echo "
 		<input type='hidden' name='date' value='$date' >
 		<input type='hidden' name='starting_time' value='$a' >
 		<input type='hidden' name='ending_time' value='$b' >
@@ -152,4 +151,13 @@
 
 	?>
 </body>
+<style>
+	.curved{
+    border: 3px solid white;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 7px;
+    margin: 1em ;
+}
+</style>
 </html>
