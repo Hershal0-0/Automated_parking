@@ -31,13 +31,20 @@
 	else{
 		$username=$_SESSION['username'];
 
-	}
+  }
+  if(isset($_POST['logout_btn']))
+{
+	echo "<script>alert('Logout Successfull')</script>";
+	$_SESSION['auth']=FALSE;
+	$_SESSION['username']="";
+	header("Location:http://localhost/Automated_parking/src/index.php");
+}
   ?>
 	
 
 
  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #433ab5;">
-  <a class="navbar-brand" href="#"><i class="fa fa-car" aria-hidden="true"></i></a>
+  <a class="navbar-brand" href="parking_areas.php"><i class="fa fa-car" aria-hidden="true"></i></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -47,7 +54,7 @@
         <a class="nav-link" href="#" style="color: white;"><i class="fa fa-address-card" aria-hidden="true"></i> Booking Details</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" style="color: white;"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Transaction Details</a>
+        <a class="nav-link" href="transaction_details.php" style="color: white;"><i class="fa fa-credit-card-alt" aria-hidden="true"></i> Transaction Details</a>
       </li>
       <li class="nav-item dropdown ml-auto">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;"><i class="fa fa-user-circle" aria-hidden="true"></i>
@@ -56,7 +63,7 @@
           ?>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#"><i class="fa fa-user" aria-hidden="true"></i> My profile</a>
+          <a class="dropdown-item" href="my_profile.php"><i class="fa fa-user" aria-hidden="true"></i> My profile</a>
 
           <a class="dropdown-item" href="http://localhost/Automated_parking/src/index.php">
           		<div>
@@ -70,3 +77,72 @@
     </ul>  
    </div>
   </nav>
+
+  <div class="container curved">
+    <h1 style="color:white">Booking Details</h1>
+  </div>
+  <div style="display:flex; align-items:center;justify-content:center;">
+  <div class=" curved table">
+    <table border="1" style="border:1px solid white">
+      <thead>
+        <tr>
+        <th>Booking_Id</th>
+        <th>Area_Id</th>
+        <th>Spot_Id</th>
+        <th>Booking_Date</th>
+        <th>From_DateTime</th>
+        <th>To_DateTime</th>
+        <th>Alert</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php 
+        $details_query="select * from booking_details where username='$username' ";
+        $details_res=mysqli_query($conn,$details_query);
+        while($row=mysqli_fetch_assoc($details_res))
+        {
+          echo "<tr>
+          <td>".$row['booking_id']."</td>
+          <td>".$row['area_id']."</td>
+          <td>".$row['spot_id']."</td>
+          <td>".$row['booking_date']."</td>
+          <td>".$row['from_datetime']."</td>
+          <td>".$row['to_datetime']."</td>
+          <td>".$row['sms_alert']."</td>
+          </tr>";
+        }
+        ?>
+      </tbody>
+    </table>
+  </div></div>
+</body>
+<style>
+  *{
+    padding:0;
+    margin:0;
+  }
+    .curved{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border: 3px solid white;
+      border-radius:10px;
+      padding-top:1em;
+      padding-bottom:1em;
+      margin-top:2em;
+      color:white;
+      
+    }
+    
+    
+    .table{
+      /* height:1000px; */
+      width:fit-content;
+      overflow-y:auto;
+      
+    }
+    
+    
+  </style>
+
+</html>
