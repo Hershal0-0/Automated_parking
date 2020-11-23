@@ -9,6 +9,7 @@ use Twilio\Rest\Client;
 /* Remove the execution time limit */
 set_time_limit(0);
 $sleep_time = 10;
+echo "-----SMS ALERT SYSTEM-----\n";
 
 date_default_timezone_set('Asia/Kolkata');
 while (TRUE)

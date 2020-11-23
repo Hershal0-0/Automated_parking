@@ -47,6 +47,56 @@ $_SESSION['auth']=FALSE;
 $_SESSION['username']="";
 header("Location:http://localhost/Automated_parking/src/index.php");
 }
+  if(isset($_POST["email_change"]))
+  {
+    $new_email=$_POST['new_email'];
+    if($new_email!="")
+    {
+      $info_query="select * from login_info where username='$username' ";
+      $info_res=mysqli_query($conn,$info_query);
+      $info_res=mysqli_fetch_assoc($info_res);
+      if($info_res['verification']=='Email')
+      {$new_verif="None";}
+      elseif($info_res['verification']=='Both')
+      {$new_verif="Mobile";}
+      else
+      {$new_verif=$info_res['verification'];}
+      $change_query="update login_info set email_id='$new_email',verification='$new_verif' where username='$username' ";
+      if(mysqli_query($conn,$change_query))
+      {
+        echo "<script>alert('Email Changed Successfully')</script>";
+      }
+    }
+    else {
+      echo "<script>alert('Email Change Unsuccessful. Try Again')</script>";
+    }
+  }
+
+  if(isset($_POST["mobile_change"]))
+  {
+    $new_mobile=$_POST['new_mobile'];
+    if($new_mobile!="")
+    {
+      $info_query="select * from login_info where username='$username' ";
+      $info_res=mysqli_query($conn,$info_query);
+      $info_res=mysqli_fetch_assoc($info_res);
+      if($info_res['verification']=='Mobile')
+      {$new_verif="None";}
+      elseif($info_res['verification']=='Both')
+      {$new_verif="Email";}
+      else
+      {$new_verif=$info_res['verification'];}
+      $change_query="update login_info set mobile='$new_mobile',verification='$new_verif' where username='$username' ";
+      if(mysqli_query($conn,$change_query))
+      {
+        echo "<script>alert('Phone Number Changed Successfully')</script>";
+      }
+    }
+    else {
+      echo "<script>alert('Phone Number Change Unsuccessful. Try Again')</script>";
+    }
+  }
+
    ?>
 	
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #433ab5;">
@@ -110,11 +160,46 @@ $mobile=$email_mobile_res['mobile'];
   $email_verify=TRUE;}
   else
   echo "<i class='far fa-times-circle ' style='color:#f20a15;'></i>";
-  echo "<br><button class='btn btn-info' id='email_change'>Change</button>";
 
 
   ?>
+  <!-- Button trigger modal -->
+<br><button type="button" class="btn btn-info" data-toggle="modal" data-target="#emailChange">
+  Change
+</button>
+
+<!-- Modal -->
+
+<div class="modal fade" id="emailChange" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Email</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <?php
+        echo "<form action='#' method='POST'>
+        <label for='email'>Current Email Id</label>
+        <input type='email' name='email' id='email' disabled value='$email'>
+        <br><label for='new_mail'>New Email Id</label>
+        <input type='email' name='new_email' id='new_email' >
+        ";
+        
+        ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="Save Changes" name="email_change"  >
+      </div>
+      </form>
+    </div>
+  </div>
 </div>
+</div>
+
 <div class="curved">
   <label for="mobile" style="color:white">Phone Number</label>
   <input type="text" name="mobile" disabled value="<?php echo $mobile; ?>">
@@ -124,8 +209,42 @@ $mobile=$email_mobile_res['mobile'];
   $mobile_verify=TRUE;}
   else
   echo "<i class='far fa-times-circle ' style='color:#f20a15;'></i>";
-  echo "<br><button class='btn btn-info' id='mobile_change'>Change</button>";
   ?>
+
+  <!-- Button trigger modal -->
+<br><button type="button" class="btn btn-info" data-toggle="modal" data-target="#mobileChange">
+  Change
+</button>
+<!-- Modal -->
+
+
+<div class="modal fade" id="mobileChange" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Phone Number</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <?php
+      echo "<form action='#' method='POST'>
+        <label for='mobile'>Current Phone Number</label>
+        <input type='mobile' name='mobile' id='mobile' disabled value='$mobile'>
+        <br><label for='new_mobile'>New Phone Number</label>
+        <input type='text' name='new_mobile' id='new_mobile' >
+        ";
+      ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <input type="submit" class="btn btn-primary" value="Save Changes" name="mobile_change"  >
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
 
 </div>
 
