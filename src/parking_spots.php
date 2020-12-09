@@ -12,7 +12,26 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+<script>
+	function popup(x,num){
+		const element=document.querySelector(`.alert`);
+		element.style.display="block"
+		const topPos=x.getBoundingClientRect().top
+		const leftPos=x.getBoundingClientRect().left
+		var newTopPos=topPos-65;
+		var newLeftPos=leftPos+30;
+		element.style.top=`${newTopPos}px`
+		element.style.left=`${newLeftPos}px`
+		// element.style.zIndex="2"
+		// element.style.opacity="0.9"
+		
+	}
+	function popdown(x,num){
+		const element=document.querySelector(`.alert`);
+		element.style.display="none"
+		
+	}
+</script>
 
 <body>
 
@@ -104,7 +123,9 @@
 	$res=mysqli_query($conn,$sql_query);
 	$arr=mysqli_fetch_assoc($res);
 	$num_spots=$arr['parking_spots'];
-	echo "<div class='wrapper'>";
+	echo "
+	<div class='alert' >This spot is already booked,<br>try a different spot.</div>
+	<div class='wrapper'>";
 	for ($i=0; $i <$num_spots ; $i++) {
 		$num=$i+1;
 		$from_datetime=new DateTime("$date $starting_time:00"); 
@@ -126,10 +147,14 @@
 
 
 
-		if($c==TRUE)
-		echo "<div class='parking_spot' style='background-color:red;' > 
+		if($c==TRUE){
+		$classname="_".$num;
+		echo "
+		
+		<div class='parking_spot' style='background-color:red;' onmouseover='popup(this,$num)' onmouseout='popdown(this,$num)' > 
 		<form action='pay_start.php' method='POST' >
 		<input type='submit' name='spot_booking' value='$num' disabled>";
+		}
 		else
 		echo "<div class='parking_spot'>
 		<form action='pay_start.php' method='POST' >
@@ -158,6 +183,16 @@
     width: fit-content;
     padding: 7px;
     margin: 1em ;
+}
+.alert{
+	position:absolute;
+	border: 2px solid white;
+	border-radius:5px;
+	color:red;
+	background-color:white;
+	display:none;
+	width:fit-content;
+	padding:2px;
 }
 </style>
 </html>
